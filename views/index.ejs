@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mongoose App</title>
+</head>
+<body>
+  <h1>Mongoose App</h2>
+  <h2>Kittens</h2>
+  <ul class="quotes">
+  <% for(var i=0; i<kittens.length; i++) {%>
+    <li class="quote">
+      <%= `${kittens[i].name}, ${kittens[i].age}, ${kittens[i].adopted ? 'adopted' : 'bought'}` %>
+    </li>
+  <% } %>
+  </ul>
+  <h2>Add a New Kitten</h2>
+  <form action="/kittens" method="POST">
+    <input type="text" placeholder="name" name="name"><br>
+    <input type="number" placeholder="age" name="age"><br>
+    <input type="checkbox" name="adopted"> Adopted?<br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
