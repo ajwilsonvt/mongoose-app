@@ -29,8 +29,6 @@ kittySchema.methods.speak = function s() {
 };
 
 const Kitten = mongoose.model('Kitten', kittySchema);
-const sample = new Kitten({ name: 'does this work>' });
-sample.speak();
 
 app.get('/', (req, res) => {
   Kitten.find((err, kittens) => {
